@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      "x4tradejs-ws@1.5.4",
+      "/Users/dezzyboy/new-ui"
+    ]
+  ],
+  "_from": "x4tradejs-ws@1.5.4",
+  "_id": "x4tradejs-ws@1.5.4",
+  "_inBundle": false,
+  "_integrity": "sha512-34JYCgcEwJzA6L8EBIJ4SNAkiWy8vj3OrJHw6/OHYr4+ARctgkpDeHoPms0j6zqV4cIkR5X4RZdctnsm0aNH9Q==",
+  "_location": "/x4tradejs-ws",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "x4tradejs-ws@1.5.4",
+    "name": "x4tradejs-ws",
+    "escapedName": "x4tradejs-ws",
+    "rawSpec": "1.5.4",
+    "saveSpec": null,
+    "fetchSpec": "1.5.4"
+  },
+  "_requiredBy": [
+    "/x4tradejs"
+  ],
+  "_resolved": "https://registry.npmjs.org/x4tradejs-ws/-/x4tradejs-ws-1.5.4.tgz",
+  "_spec": "1.5.4",
+  "_where": "/Users/dezzyboy/new-ui",
+  "author": {
+    "name": "Sigve Kvalsvik",
+    "email": "x4tradeblocks@gmail.com",
+    "url": "https://github.com/svk31"
+  },
+  "browser": {
+    "ws": false
+  },
+  "bugs": {
+    "url": "https://github.com/x4trade/x4tradejs-ws/issues"
+  },
+  "contributors": [
+    {
+      "name": "James Calfee",
+      "email": "james@jcalfee.info",
+      "url": "https://github.com/jcalfee/"
+    }
+  ],
+  "dependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "ws": "4.1.0"
+  },
+  "description": "Pure JavaScript X4trade/Graphene websocket interface for node.js and browsers.",
+  "devDependencies": {
+    "assert": "^1.3.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-1": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.2.0",
+    "http-server": "^0.11.1",
+    "mocha": "^5.2.0",
+    "uglify-js": "^3.1.1"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "homepage": "https://github.com/x4trade/x4tradejs-ws#readme",
+  "jsnext:main": "es/index.js",
+  "license": "BSD-2-Clause-FreeBSD",
+  "main": "cjs/index.js",
+  "name": "x4tradejs-ws",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x4trade/x4tradejs-ws.git"
+  },
+  "scripts": {
+    "browserify": "NODE_ENV=production browserify cjs/src/ApiInstances.js --standalone x4trade_ws -o build/x4tradejs-ws.js -d",
+    "build": "BABEL_ENV=cjs babel lib --out-dir cjs",
+    "build-es": "BABEL_ENV=es babel ./lib -d es",
+    "clean": "rm -rf ./cjs/* & rm -rf ./build/* & rm -rf ./es/*",
+    "postbrowserify": "NODE_ENV=production uglifyjs --compress --mangle --sequences --drop_console --mangle-props --screw-ie8 --output build/x4tradejs-ws.min.js -- build/x4tradejs-ws.js",
+    "postbuild": "npm run browserify && npm run build-es",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build",
+    "pretest:browser": "NODE_ENV=dev browserify test/*.js -o browser-test/browser-test.js -t [ babelify ]",
+    "test": "BABEL_ENV=test mocha --compilers js:babel-core/register --recursive",
+    "test:api": "BABEL_ENV=test mocha --compilers js:babel-core/register ./test/Api --watch",
+    "test:browser": "BABEL_ENV=test http-server ./browser-test",
+    "test:connection": "BABEL_ENV=test mocha --compilers js:babel-core/register ./test/Connection --watch",
+    "test:manager": "BABEL_ENV=test mocha --compilers js:babel-core/register ./test/Manager --watch",
+    "test:watch": "npm test -- --watch"
+  },
+  "version": "1.5.4"
+}
