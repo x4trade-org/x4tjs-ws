@@ -5,8 +5,8 @@
       "/Users/dezzyboy/new-ui"
     ]
   ],
-  "_from": "x4tradejs-ws@1.5.4",
-  "_id": "x4tradejs-ws@1.5.4",
+  "_from": "x4tradejs-ws@1.5.5",
+  "_id": "x4tradejs-ws@1.5.5",
   "_inBundle": false,
   "_integrity": "sha512-34JYCgcEwJzA6L8EBIJ4SNAkiWy8vj3OrJHw6/OHYr4+ARctgkpDeHoPms0j6zqV4cIkR5X4RZdctnsm0aNH9Q==",
   "_location": "/x4tradejs-ws",
@@ -14,18 +14,18 @@
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "x4tradejs-ws@1.5.4",
+    "raw": "x4tradejs-ws@1.5.5",
     "name": "x4tradejs-ws",
     "escapedName": "x4tradejs-ws",
-    "rawSpec": "1.5.4",
+    "rawSpec": "1.5.5",
     "saveSpec": null,
-    "fetchSpec": "1.5.4"
+    "fetchSpec": "1.5.5"
   },
   "_requiredBy": [
     "/x4tradejs"
   ],
-  "_resolved": "https://registry.npmjs.org/x4tradejs-ws/-/x4tradejs-ws-1.5.4.tgz",
-  "_spec": "1.5.4",
+  "_resolved": "https://registry.npmjs.org/x4tradejs-ws/-/x4tradejs-ws-1.5.5.tgz",
+  "_spec": "1.5.5",
   "_where": "/Users/dezzyboy/new-ui",
   "author": {
     "name": "Sigve Kvalsvik",
@@ -84,5 +84,5 @@
     "test:manager": "BABEL_ENV=test mocha --compilers js:babel-core/register ./test/Manager --watch",
     "test:watch": "npm test -- --watch"
   },
-  "version": "1.5.4"
+  "version": "1.5.5"
 }
