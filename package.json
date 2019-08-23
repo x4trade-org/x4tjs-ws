@@ -36,7 +36,7 @@
     "ws": false
   },
   "bugs": {
-    "url": "https://github.com/x4trade/x4tradejs-ws/issues"
+    "url": "https://github.com/x4trade-org/x4tradejs-ws/issues"
   },
   "contributors": [
     {
@@ -64,24 +64,18 @@
   "engines": {
     "node": ">= 6.0.0"
   },
-  "homepage": "https://github.com/x4trade/x4tradejs-ws#readme",
+  "homepage": "https://github.com/x4trade-org/x4tradejs-ws#readme",
   "jsnext:main": "es/index.js",
   "license": "BSD-2-Clause-FreeBSD",
   "main": "cjs/index.js",
   "name": "x4tradejs-ws",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/x4trade/x4tradejs-ws.git"
+    "url": "git+https://github.com/x4trade-org/x4tradejs-ws.git"
   },
   "scripts": {
     "browserify": "NODE_ENV=production browserify cjs/src/ApiInstances.js --standalone x4trade_ws -o build/x4tradejs-ws.js -d",
-    "build": "BABEL_ENV=cjs babel lib --out-dir cjs",
-    "build-es": "BABEL_ENV=es babel ./lib -d es",
-    "clean": "rm -rf ./cjs/* & rm -rf ./build/* & rm -rf ./es/*",
     "postbrowserify": "NODE_ENV=production uglifyjs --compress --mangle --sequences --drop_console --mangle-props --screw-ie8 --output build/x4tradejs-ws.min.js -- build/x4tradejs-ws.js",
-    "postbuild": "npm run browserify && npm run build-es",
-    "prebuild": "npm run clean",
-    "prepublish": "npm run build",
     "pretest:browser": "NODE_ENV=dev browserify test/*.js -o browser-test/browser-test.js -t [ babelify ]",
     "test": "BABEL_ENV=test mocha --compilers js:babel-core/register --recursive",
     "test:api": "BABEL_ENV=test mocha --compilers js:babel-core/register ./test/Api --watch",

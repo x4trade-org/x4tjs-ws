@@ -46,7 +46,7 @@ The `set_subscribe_callback` callback (updateListener) will be called whenever a
 This is a non-exhaustive list of endpoints available from the witness_node executable, which provides the API server of X4trade.
 
 ## database_api
-https://github.com/x4trade/x4trade-core/blob/master/libraries/app/database_api.cpp
+https://github.com/x4trade-org/x4trade-core/blob/master/libraries/app/database_api.cpp
 
 __Usage examples__
 `Apis.instance().db_api().exec(method, params)`
